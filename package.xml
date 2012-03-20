@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE contaopackage>
+<extension name="extended_checkbox" date="20111108">
+    <author user="christian.barkowsky" name="Christian Barkowsky" website="http://www.christianbarkowsky.de" />
+    <copyright>&amp;copy; Christian Barkowsky Webentwicklung</copyright>
+    <license>LGPL</license>
+    <classification type="free" category="widget" />
+    <release version="10000019" build="25" date="20100805" />
+    <contao minversion="20090009" maxversion="20100039" />
+    <language code="en">
+        <translator user="christian.barkowsky" name="Christian Barkowsky" website="http://www.christianbarkowsky.de" />
+        <searchtags>form,checkbox,widget,hyperlink</searchtags>
+        <title>Extendet checkbox</title>
+        <teaser>Checkbox with a hyperlink in the Label</teaser>
+        <description>&lt;p&gt;With this extension, it is possible to get a label with a hyperlink. The link can point on a page or file.&lt;/p&gt;</description>
+        <releasenotes>&lt;ul&gt;
+&lt;li&gt;Configurable display template (form_widget_*.tpl)&lt;/li&gt;
+&lt;li&gt;.html5 and .xhtml templates added for Contao 2.10&lt;/li&gt;
+&lt;/ul&gt;</releasenotes>
+        <forum link="http://www.typolight-community.de/showthread.php?t=761" />
+        <shop link="http://www.amazon.de/wishlist/1IB2P3A3AJRCD" />
+    </language>
+    <language code="de">
+        <translator user="christian.barkowsky" name="Christian Barkowsky" website="http://www.christianbarkowsky.de" />
+        <searchtags>Formular,Checkbox,Widget,Erweiterung,Hyperlink</searchtags>
+        <title>Erweiterte Checkbox</title>
+        <teaser>Checkbox mit Hyperlink im Label</teaser>
+        <description>&lt;p&gt;Mit dieser Erweiterung ist es m&amp;ouml;glich, dem Label einer Checkbox einen Hyperlink zu verpassen. Der Hyperlink kann auf eine Seite oder eine Datei zeigen.&lt;/p&gt;</description>
+        <releasenotes>&lt;ul&gt;
+&lt;li&gt;Konfigurierbares Anzeigetemplate (form_widget_*.tpl)&lt;/li&gt;
+&lt;li&gt;.html5 und .xhtml Templates f&amp;uuml;r Contao 2.10 hinzugef&amp;uuml;gt&lt;/li&gt;
+&lt;/ul&gt;</releasenotes>
+        <forum link="http://www.typolight-community.de/showthread.php?t=761" />
+        <shop link="http://www.amazon.de/wishlist/1IB2P3A3AJRCD" />
+    </language>
+</extension>
