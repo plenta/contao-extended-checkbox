@@ -21,7 +21,7 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Christian Barkowsky 2011
+ * @copyright  Christian Barkowsky 2011-2012
  * @author     Christian Barkowsky <http://www.christianbarkowsky.de>
  * @package    Extended Checkbox
  * @license    EULA
@@ -38,7 +38,7 @@ $this->loadDataContainer('tl_content');
 /**
  * Palettes
  */
-$GLOBALS['TL_DCA']['tl_form_field']['palettes']['checkbox_extended'] = '{type_legend},type,name,label;{options_legend},checkbox_extended_value;{evp_link_legend},checkbox_extended_url,checkbox_extended_target,checkbox_extended_singleSRC,checkbox_extended_title,checkbox_extended_embed;{fconfig_legend:hide},mandatory;{template_legend:hide},checkbox_extended_tpl;{expert_legend:hide},class;{submit_legend:hide},addSubmit';
+$GLOBALS['TL_DCA']['tl_form_field']['palettes']['checkbox_extended'] = '{type_legend},type,name,label;{options_legend},checkbox_extended_value;{extended_checkbox_legend},checkbox_extended_url,checkbox_extended_target,checkbox_extended_singleSRC,checkbox_extended_title,checkbox_extended_embed;{fconfig_legend:hide},mandatory;{template_legend:hide},checkbox_extended_tpl;{expert_legend:hide},class;{submit_legend:hide},addSubmit';
 
 
 /**
@@ -106,3 +106,5 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['checkbox_extended_tpl'] = array
 	'inputType'               => 'select',
 	'options'                 => $this->getTemplateGroup('form_widget')
 );
+
+?>

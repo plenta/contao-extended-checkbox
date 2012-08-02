@@ -43,6 +43,7 @@ $GLOBALS['TL_LANG']['tl_form_field']['checkbox_extended_tpl']= array('Checkbox-T
 /**
  * Legends
  */
+$GLOBALS['TL_LANG']['tl_form_field']['extended_checkbox_legend'] = 'Erweiterte-Checkbox-Einstellungen';
 $GLOBALS['TL_LANG']['tl_form_field']['checkbox_extended_legend'] = 'Hyperlink-Einstellungen';
 $GLOBALS['TL_LANG']['tl_form_field']['template_legend'] = 'Template-Einstellungen';
 

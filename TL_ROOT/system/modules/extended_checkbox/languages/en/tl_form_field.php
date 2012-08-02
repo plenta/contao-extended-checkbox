@@ -21,7 +21,7 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Christian Barkowsky 2011
+ * @copyright  Christian Barkowsky 2011-2012
  * @author     Christian Barkowsky <http://www.christianbarkowsky.de>
  * @package    Extended Checkbox
  * @license    EULA
@@ -43,6 +43,7 @@ $GLOBALS['TL_LANG']['tl_form_field']['checkbox_extended_tpl']= array('Checkbox t
 /**
  * Legends
  */
+$GLOBALS['TL_LANG']['tl_form_field']['extended_checkbox_legend'] = 'Extended checkbox settings';
 $GLOBALS['TL_LANG']['tl_form_field']['checkbox_extended_legend'] = 'Hyperlink-Settings';
 $GLOBALS['TL_LANG']['tl_form_field']['template_legend'] = 'Template settings';
 
