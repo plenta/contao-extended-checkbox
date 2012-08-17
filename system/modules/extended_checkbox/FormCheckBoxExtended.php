@@ -2,7 +2,7 @@
 
 /**
  * Contao Open Source CMS
- * Copyright (C) 2005-2011 Leo Feyer
+ * Copyright (C) 2005-2012 Leo Feyer
  *
  * Formerly known as TYPOlight Open Source CMS.
  *
@@ -10,18 +10,18 @@
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation, either
  * version 3 of the License, or (at your option) any later version.
- *
+ * 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- *
+ * 
  * You should have received a copy of the GNU Lesser General Public
  * License along with this program. If not, please visit the Free
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Christian Barkowsky 2011
+ * @copyright  Christian Barkowsky 2011-2012
  * @author     Christian Barkowsky <http://www.christianbarkowsky.de>
  * @package    Extended Checkbox
  * @license    EULA
@@ -33,7 +33,7 @@
  * Class FormCheckBoxExtended
  *
  * Form field "extended checkbox".
- * @copyright  Christian Barkowsky 2011
+ * @copyright  Christian Barkowsky 2011-2012
  * @author     Christian Barkowsky <http://www.christianbarkowsky.de>
  * @package    Controller
  */
@@ -140,8 +140,13 @@ class FormCheckBoxExtended extends Widget
 	 */
 	public function generate()
 	{
+		if ($this->mandatory)
+		{
+				$this->arrAttributes['required'] = 'required';
+		}
+	
 		// Target
-		if($this->checkbox_extended_target)
+		if ($this->checkbox_extended_target)
 			$evp_link_target = LINK_NEW_WINDOW_BLUR;
 		else
 			$evp_link_target = '';
@@ -154,7 +159,7 @@ class FormCheckBoxExtended extends Widget
 			$this->checkbox_extended_title = $this->checkbox_extended_url;
 
 		// Set href
-		if(!strlen($this->checkbox_extended_url))
+		if (!strlen($this->checkbox_extended_url))
 			$href = $this->checkbox_extended_singleSRC;
 		else
 			$href = $this->checkbox_extended_url;
