@@ -21,7 +21,7 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Christian Barkowsky 2011
+ * @copyright  Christian Barkowsky 2011-2012
  * @author     Christian Barkowsky <http://www.christianbarkowsky.de>
  * @package    Extended Checkbox
  * @license    EULA
