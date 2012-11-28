@@ -63,7 +63,16 @@ class FormCheckBoxExtended extends Widget
 	public function __construct($arrAttributes=false)
 	{
 		$this->addAttributes($arrAttributes);
-		$this->strTemplate = $this->checkbox_extended_tpl;
+		
+		if (TL_MODE == 'BE')
+		{
+			$this->strTemplate = 'be_widget';
+		}
+		else
+		{
+			$this->strTemplate = $this->checkbox_extended_tpl;
+		}
+				
 		parent::__construct();
 	}
 
