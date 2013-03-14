@@ -2,7 +2,7 @@
 
 /**
  * Contao Open Source CMS
- * Copyright (C) 2005-2011 Leo Feyer
+ * Copyright (C) 2005-2013 Leo Feyer
  *
  * Formerly known as TYPOlight Open Source CMS.
  *
@@ -21,10 +21,10 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Christian Barkowsky 2011-2012
+ * @copyright  Christian Barkowsky 2011-2013
  * @author     Christian Barkowsky <http://www.christianbarkowsky.de>
  * @package    Extended Checkbox
- * @license    EULA
+ * @license    LGPL
  * @filesource
  */
 
@@ -104,7 +104,36 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['checkbox_extended_tpl'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_form_field']['checkbox_extended_tpl'],
 	'exclude'                 => true,
 	'inputType'               => 'select',
-	'options'                 => $this->getTemplateGroup('form_widget')
+	'default' => 'form_widget_extended_checkbox_without_label',
+	'options_callback' => array('tl_extended_checkbox', 'getExtendedCheckboxTemplates')
 );
+
+
+class tl_extended_checkbox extends Backend
+{
+	public function __construct()
+	{
+		parent::__construct();
+		$this->import('BackendUser', 'User');
+	}
+	
+	
+	/**
+	* Return all extended checkbox templates as array
+	*/
+	public function getExtendedCheckboxTemplates(DataContainer $dc)
+	{
+		$intPid = $dc->activeRecord->pid;
+		
+		if ($this->Input->get('act') == 'overrideAll')
+		{
+			$intPid = $this->Input->get('id');
+		}
+		
+		return $this->getTemplateGroup('form_widget' , $intPid);
+	}
+}
+
+
 
 ?>
