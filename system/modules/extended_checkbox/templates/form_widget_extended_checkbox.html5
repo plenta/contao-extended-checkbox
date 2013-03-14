@@ -4,6 +4,6 @@
 	<td class="col_1 col_last"><?php echo $this->generateWithError(); ?></td>
   </tr>
 <?php else: ?>
-  <label><?php echo $this->generateLabel(); ?></label>
+  <label><?php echo $this->label; ?></label>
   <?php echo $this->generateWithError(); ?><br>
 <?php endif; ?>
