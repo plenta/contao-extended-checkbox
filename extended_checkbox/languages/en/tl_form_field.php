@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
+<?php
 
 /**
  * Contao Open Source CMS
@@ -40,11 +40,10 @@ $GLOBALS['TL_LANG']['tl_form_field']['checkbox_extended_target'] = array('In neu
 $GLOBALS['TL_LANG']['tl_form_field']['checkbox_extended_singleSRC']    = array('Source file', 'Please select a file or folder from the files directory.');
 $GLOBALS['TL_LANG']['tl_form_field']['checkbox_extended_tpl']= array('Checkbox template', 'Here you can select the form template.');
 
+
 /**
  * Legends
  */
 $GLOBALS['TL_LANG']['tl_form_field']['extended_checkbox_legend'] = 'Extended checkbox settings';
 $GLOBALS['TL_LANG']['tl_form_field']['checkbox_extended_legend'] = 'Hyperlink-Settings';
 $GLOBALS['TL_LANG']['tl_form_field']['template_legend'] = 'Template settings';
-
-?>
