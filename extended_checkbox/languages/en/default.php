@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
 
 /**
  * Contao Open Source CMS
@@ -33,3 +33,5 @@
  * Frontend form fields
  */
 $GLOBALS['TL_LANG']['FFL']['checkbox_extended'] = array('Extended Checkbox', '');
+
+?>

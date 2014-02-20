@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
 
 /**
  * Contao Open Source CMS
@@ -133,3 +133,7 @@ class tl_extended_checkbox extends Backend
 		return $this->getTemplateGroup('form_widget' , $intPid);
 	}
 }
+
+
+
+?>

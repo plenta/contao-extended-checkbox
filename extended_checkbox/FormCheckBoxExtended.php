@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
 
 /**
  * Contao Open Source CMS
@@ -37,7 +37,7 @@
  * @author     Christian Barkowsky <http://www.christianbarkowsky.de>
  * @package    Controller
  */
-class FormCheckBoxExtended extends \Widget
+class FormCheckBoxExtended extends Widget
 {
 	/**
 	 * Submit user input
@@ -195,3 +195,5 @@ class FormCheckBoxExtended extends \Widget
 						$strOptions) . $this->addSubmit();
 	}
 }
+
+?>
