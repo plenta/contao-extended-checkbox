@@ -65,7 +65,7 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['checkbox_extended_singleSRC'] = a
 	'exclude'                 => true,
 	'inputType'               => 'fileTree',
 	'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'mandatory'=>false, 'tl_class'=>'clr'),
-	'sql'                     => "varchar(255) NOT NULL default ''"
+	'sql'                     => "binary(16) NULL"
 );
 
 $GLOBALS['TL_DCA']['tl_form_field']['fields']['checkbox_extended_title'] = array
