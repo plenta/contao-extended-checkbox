@@ -129,8 +129,6 @@ class FormCheckBoxExtended extends \Widget
 	 */
 	public function generate()
 	{
-		print 'sdfdf';
-	
 		if ($this->mandatory)
 		{
 				$this->arrAttributes['required'] = 'required';
