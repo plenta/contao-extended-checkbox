@@ -2,6 +2,8 @@
 
 Checkbox with hyperlink
 
+![](package.jpg)
+
 
 ## Contributor
 
