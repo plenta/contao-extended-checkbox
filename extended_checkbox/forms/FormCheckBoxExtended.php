@@ -151,7 +151,7 @@ class FormCheckBoxExtended extends \Widget
 
 		// Set href
 		if (!strlen($this->checkbox_extended_url))
-			$href = $this->checkbox_extended_singleSRC;
+			$href = $this->buildDownload($this->checkbox_extended_singleSRC);
 		else
 			$href = $this->checkbox_extended_url;
 
@@ -175,5 +175,23 @@ class FormCheckBoxExtended extends \Widget
 						$this->strId,
 						(strlen($this->strClass) ? ' ' . $this->strClass : ''),
 						$strOptions) . $this->addSubmit();
+	}
+	
+	
+	private function buildDownload($singleSRC)
+	{
+		$objFile = \FilesModel::findByUuid($singleSRC);
+
+		if ($objFile === null)
+		{
+			if (!\Validator::isUuid($singleSRC))
+			{
+				return '<p class="error">'.$GLOBALS['TL_LANG']['ERR']['version2format'].'</p>';
+			}
+
+			return '';
+		}
+
+		return $objFile->path;
 	}
 }
