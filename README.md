@@ -1,4 +1,4 @@
-# [extended_checkbox] Extended checkbox
+# Extended checkbox for Contao
 
 Checkbox with hyperlink
 
