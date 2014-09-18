@@ -25,9 +25,6 @@
     "replace": {
         "contao-legacy/extended_checkbox": "self.version"
     },
-     "autoload":{
-        "classmap":["extended_checkbox/"]
-    },
     "extra":{
         "contao": {
             "sources":{
