@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ExtendedCheckbox
+ * Extended checkbox
  * 
  * Copyright (C) 2009-2014 Christian Barkowsky
  * 
@@ -11,29 +11,16 @@
  */
 
 
-/**
- * Run in a custom namespace, so the class can be replaced
- */
 namespace Contao;
 
 
 class FormCheckBoxExtended extends \Widget
 {
-	/**
-	 * Submit user input
-	 */
+
 	protected $blnSubmitInput = true;
 
-
-	/**
-	 * Template
-	 */
 	protected $strTemplate = 'form_widget';
 
-
-	/**
-	 * Options
-	 */
 	protected $arrOptions = array();
 
 
@@ -129,6 +116,8 @@ class FormCheckBoxExtended extends \Widget
 	 */
 	public function generate()
 	{
+		$evp_link_target = '';
+		
 		if ($this->mandatory)
 		{
 				$this->arrAttributes['required'] = 'required';
@@ -136,22 +125,28 @@ class FormCheckBoxExtended extends \Widget
 	
 		// Target
 		if ($this->checkbox_extended_target)
+		{
 			$evp_link_target = LINK_NEW_WINDOW_BLUR;
-		else
-			$evp_link_target = '';
+		}
 
 		// Embeded link
 		$evp_link_embed = explode('%s', $this->checkbox_extended_embed);
-
+		
 		// Set link title
 		if (!strlen($this->checkbox_extended_title))
+		{
 			$this->checkbox_extended_title = $this->checkbox_extended_url;
-
+		}
+			
 		// Set href
 		if (!strlen($this->checkbox_extended_url))
+		{
 			$href = $this->buildDownload($this->checkbox_extended_singleSRC);
+		}
 		else
+		{
 			$href = $this->checkbox_extended_url;
+		}
 
 		$strOptions = sprintf('<span><input type="checkbox" name="%s" id="opt_%s" class="checkbox" value="%s"%s%s /> <label id="lbl_%s" for="opt_%s">%s</label></span>',
 								$this->strName,
@@ -176,6 +171,9 @@ class FormCheckBoxExtended extends \Widget
 	}
 	
 	
+	/**
+	 * Build download
+	 */
 	private function buildDownload($singleSRC)
 	{
 		$objFile = \FilesModel::findByUuid($singleSRC);
