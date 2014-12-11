@@ -19,7 +19,9 @@ class FormCheckBoxExtended extends \Widget
 
 	protected $blnSubmitInput = true;
 
+
 	protected $strTemplate = 'form_widget';
+
 
 	protected $arrOptions = array();
 
@@ -128,7 +130,7 @@ class FormCheckBoxExtended extends \Widget
 		{
 			$evp_link_target = LINK_NEW_WINDOW_BLUR;
 		}
-
+		
 		// Embeded link
 		$evp_link_embed = explode('%s', $this->checkbox_extended_embed);
 		
@@ -147,7 +149,16 @@ class FormCheckBoxExtended extends \Widget
 		{
 			$href = $this->checkbox_extended_url;
 		}
-
+		
+		if (!strlen($this->checkbox_extended_url) && !strlen($this->checkbox_extended_singleSRC))
+		{
+			$strCheckboxLink = sprintf('%s%s%s', $evp_link_embed[0], $this->checkbox_extended_title, $evp_link_embed[1]);
+		}
+		else
+		{
+			$strCheckboxLink = sprintf('%s<a href="%s" title="%s"%s>%s</a>%s', $evp_link_embed[0], $href, $this->checkbox_extended_title, $evp_link_target, $this->checkbox_extended_title, $evp_link_embed[1]);
+		}
+		
 		$strOptions = sprintf('<span><input type="checkbox" name="%s" id="opt_%s" class="checkbox" value="%s"%s%s /> <label id="lbl_%s" for="opt_%s">%s</label></span>',
 								$this->strName,
 								$this->strId . '_0',
@@ -156,18 +167,9 @@ class FormCheckBoxExtended extends \Widget
 								$this->getAttributes(),
 								$this->strId . '_0',
 								$this->strId . '_0',
-								sprintf('%s<a href="%s" title="%s"%s>%s</a>%s',
-								$evp_link_embed[0],
-								$href,
-								$this->checkbox_extended_title,
-								$evp_link_target,
-								$this->checkbox_extended_title,
-								$evp_link_embed[1])) . $this->addSubmit();
+								$strCheckboxLink) . $this->addSubmit();
 
-        return sprintf('<div id="ctrl_%s" class="checkbox_container%s">%s</div>',
-						$this->strId,
-						(strlen($this->strClass) ? ' ' . $this->strClass : ''),
-						$strOptions) . $this->addSubmit();
+        return sprintf('<div id="ctrl_%s" class="checkbox_container%s">%s</div>', $this->strId, (strlen($this->strClass) ? ' ' . $this->strClass : ''), $strOptions) . $this->addSubmit();
 	}
 	
 	
@@ -176,6 +178,11 @@ class FormCheckBoxExtended extends \Widget
 	 */
 	private function buildDownload($singleSRC)
 	{
+		if (!strlen($singleSRC))
+		{
+			return '';
+		}
+		
 		$objFile = \FilesModel::findByUuid($singleSRC);
 
 		if ($objFile === null)
