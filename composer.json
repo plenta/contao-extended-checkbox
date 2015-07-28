@@ -1,35 +1,35 @@
 {
-    "name":"christianbarkowsky/extended_checkbox",
-    "description":"Checkbox with a hyperlink in label. Extension for Contao Open Source CMS",
-    "keywords":["checkbox", "widget", "form", "hyperlink"],
-    "minimum-stability": "stable",
-    "type":"contao-module",
-    "license":"LGPL-3.0+",
-    "authors":[
-        {
-            "name":"Christian Barkowsky",
-            "homepage":"http://christianbarkowsky.de",
-            "role":"Developer",
-            "email":"hallo@christianbarkowsky.de"
-        }
-    ],
-    "support": {
-		"issues": "https://github.com/christianbarkowsky/contao-extended-checkbox/issues",
-		"source": "https://github.com/christianbarkowsky/contao-extended-checkbox"
-	},
-    "require":{
-        "php":">=5.3",
-        "contao/core":">=3.2,<4",
-        "contao-community-alliance/composer-installer":"*"
-    },
-    "replace": {
-        "contao-legacy/extended_checkbox": "self.version"
-    },
-    "extra":{
-        "contao": {
-            "sources":{
-                "": "system/modules/extended_checkbox"
-            }
-        }
+  "name":"christianbarkowsky/extended_checkbox",
+  "description":"Checkbox with a hyperlink in label. Extension for Contao Open Source CMS",
+  "keywords":["checkbox", "widget", "form", "hyperlink"],
+  "minimum-stability": "stable",
+  "type":"contao-module",
+  "license":"LGPL-3.0+",
+  "authors":[
+    {
+      "name":"Christian Barkowsky",
+      "homepage":"http://christianbarkowsky.de",
+      "role":"Developer",
+      "email":"hallo@christianbarkowsky.de"
     }
+  ],
+  "support": {
+    "issues": "https://github.com/christianbarkowsky/contao-extended-checkbox/issues",
+    "source": "https://github.com/christianbarkowsky/contao-extended-checkbox"
+  },
+  "require":{
+    "php":">=5.3",
+    "contao/core":">=3.2,<4",
+    "contao-community-alliance/composer-installer":"*"
+  },
+  "replace": {
+    "contao-legacy/extended_checkbox": "self.version"
+  },
+  "extra":{
+    "contao": {
+      "sources":{
+        "": "system/modules/extended_checkbox"
+      }
+    }
+  }
 }
