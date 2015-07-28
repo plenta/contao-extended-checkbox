@@ -1,7 +1,7 @@
 <?php if (!$this->tableless): ?>
-  <tr class="<?php echo $this->rowClass; ?>">
-	<td colspan="2" class="colspan"><?php echo $this->generateWithError(); ?></td>
-  </tr>
+<tr class="<?php echo $this->rowClass; ?>">
+    <td colspan="2" class="colspan"><?php echo $this->generateWithError(); ?><?php if ($this->mandatory): ?><span class="mandatory">*</span><?php endif; ?></td>
+</tr>
 <?php else: ?>
-  <?php echo $this->generateWithError(); ?><br />
+<?php echo $this->generateWithError(); ?><?php if ($this->mandatory): ?><span class="mandatory">*</span><?php endif; ?><br />
 <?php endif; ?>

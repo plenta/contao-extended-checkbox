@@ -1,9 +1,8 @@
 <?php if (!$this->tableless): ?>
-  <tr class="<?php echo $this->rowClass; ?>">
-  	<td class="col_0 col_first"><label><?php echo $this->label; ?></label></td>
-	<td class="col_1 col_last"><?php echo $this->generateWithError(); ?></td>
-  </tr>
-<?php else: ?>
-  <label><?php echo $this->label; ?></label>
-  <?php echo $this->generateWithError(); ?><br>
+<tr class="<?php echo $this->rowClass; ?>">
+    <td class="col_0 col_first"><label><?php echo $this->label; ?><?php if ($this->mandatory): ?><span class="mandatory">*</span><?php endif; ?></label></td>
+    <td class="col_1 col_last"><?php echo $this->generateWithError(); ?></td>
+</tr><?php else: ?>
+<label><?php echo $this->label; ?><?php if ($this->mandatory): ?><span class="mandatory">*</span><?php endif; ?></label>
+<?php echo $this->generateWithError(); ?><br>
 <?php endif; ?>
