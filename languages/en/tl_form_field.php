@@ -2,14 +2,13 @@
 
 /**
  * ExtendedCheckbox
- * 
- * Copyright (C) 2009-2014 Christian Barkowsky
- * 
+ *
+ * Copyright (C) 2009-2019 Christian Barkowsky
+ *
  * @package ExtendedCheckbox
- * @author  Christian Barkowsky <http://christianbarkowsky.de>
+ * @author  Christian Barkowsky <https://christianbarkowsky.de>
  * @license LGPL
  */
-
 
 /**
  * Fields

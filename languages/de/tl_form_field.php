@@ -2,14 +2,13 @@
 
 /**
  * ExtendedCheckbox
- * 
- * Copyright (C) 2009-2014 Christian Barkowsky
- * 
+ *
+ * Copyright (C) 2009-2019 Christian Barkowsky
+ *
  * @package ExtendedCheckbox
- * @author  Christian Barkowsky <http://christianbarkowsky.de>
+ * @author  Christian Barkowsky <https://christianbarkowsky.de>
  * @license LGPL
  */
-
 
 /**
  * Fields
@@ -21,7 +20,6 @@ $GLOBALS['TL_LANG']['tl_form_field']['checkbox_extended_url'] = array('Link-Adre
 $GLOBALS['TL_LANG']['tl_form_field']['checkbox_extended_target'] = array('In neuem Fenster öffnen', 'Den Link in einem neuen Browserfenster öffnen.');
 $GLOBALS['TL_LANG']['tl_form_field']['checkbox_extended_singleSRC'] = array('Quelldatei', 'Bitte wählen Sie eine Datei oder einen Ordner aus der Dateiübersicht.');
 $GLOBALS['TL_LANG']['tl_form_field']['checkbox_extended_tpl']= array('Checkbox-Template', 'Hier können Sie das Checkbox-Template auswählen.');
-
 
 /**
  * Legends

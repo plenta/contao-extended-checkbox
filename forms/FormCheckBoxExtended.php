@@ -1,25 +1,22 @@
 <?php
 
 /**
- * Extended checkbox
+ * ExtendedCheckbox
  *
- * Copyright (C) 2009-2015 Christian Barkowsky
+ * Copyright (C) 2009-2019 Christian Barkowsky
  *
  * @package ExtendedCheckbox
- * @author  Christian Barkowsky <http://christianbarkowsky.de>
+ * @author  Christian Barkowsky <https://christianbarkowsky.de>
  * @license LGPL
  */
 
-
 namespace Contao;
-
 
 /**
  * Class FormCheckBoxExtended
- *
- * @author Christian Barkowsky <https://github.com/christianbarkowsky>
+ * @package Contao
  */
-class FormCheckBoxExtended extends \Widget
+class FormCheckBoxExtended extends Widget
 {
 
     /**
@@ -29,14 +26,12 @@ class FormCheckBoxExtended extends \Widget
      */
     protected $blnSubmitInput = true;
 
-
     /**
      * Template
      *
      * @var string
      */
     protected $strTemplate = 'form_widget';
-
 
     /**
      * Error message
@@ -45,7 +40,6 @@ class FormCheckBoxExtended extends \Widget
      */
     protected $strError = '';
 
-
     /**
      * The CSS class prefix
      *
@@ -53,12 +47,10 @@ class FormCheckBoxExtended extends \Widget
      */
     protected $strPrefix = 'widget widget-extended-checkbox';
 
-
     /**
      * @var array
      */
     protected $arrOptions = array();
-
 
     /**
      * Initialize the object
@@ -75,7 +67,6 @@ class FormCheckBoxExtended extends \Widget
 
         parent::__construct();
     }
-
 
     /**
      * Add specific attributes
@@ -100,7 +91,6 @@ class FormCheckBoxExtended extends \Widget
         }
     }
 
-
     /**
      * Return a parameter
      */
@@ -113,7 +103,6 @@ class FormCheckBoxExtended extends \Widget
                 break;
         }
     }
-
 
     /**
      * Check options if the field is mandatory
@@ -139,7 +128,6 @@ class FormCheckBoxExtended extends \Widget
             $this->varValue = '';
         }
     }
-
 
     /**
      * Generate the widget and return it as string
@@ -191,13 +179,12 @@ class FormCheckBoxExtended extends \Widget
         return sprintf('<div id="ctrl_%s" class="checkbox_container%s">%s</div>', $this->strId, (strlen($this->strClass) ? ' ' . $this->strClass : ''), $strOptions) . $this->addSubmit();
     }
 
-
     /**
      * Build download
      */
     private function buildDownload($singleSRC)
     {
-        if (!strlen($singleSRC)) {
+        if (!\strlen($singleSRC)) {
             return '';
         }
 
