@@ -73,8 +73,7 @@ class FormCheckBoxExtended extends Widget
      */
     public function __set($strKey, $varValue)
     {
-        switch ($strKey)
-        {
+        switch ($strKey) {
             case 'options':
                 break;
 
@@ -96,8 +95,7 @@ class FormCheckBoxExtended extends Widget
      */
     public function __get($strKey)
     {
-        switch ($strKey)
-        {
+        switch ($strKey) {
             default:
                 return parent::__get($strKey);
                 break;
@@ -109,7 +107,6 @@ class FormCheckBoxExtended extends Widget
      */
     public function validate()
     {
-        $mandatory = $this->mandatory;
         $options = $_POST[$this->strName];
 
         $varInput = $this->validator($options);
@@ -119,9 +116,7 @@ class FormCheckBoxExtended extends Widget
         }
 
         // Reset the property
-        if ($mandatory) {
-            $this->mandatory = true;
-        }
+        $this->mandatory = true;
 
         // Clear result if nothing has been submitted
         if (!isset($_POST[$this->strName])) {
@@ -136,9 +131,7 @@ class FormCheckBoxExtended extends Widget
     {
         $evp_link_target = '';
 
-        if ($this->mandatory) {
-            $this->arrAttributes['required'] = 'required';
-        }
+        $this->arrAttributes['required'] = 'required';
 
         // Target
         if ($this->checkbox_extended_target) {
@@ -166,7 +159,7 @@ class FormCheckBoxExtended extends Widget
             $strCheckboxLink = sprintf('%s<a href="%s" title="%s"%s>%s</a>%s', $evp_link_embed[0], $href, $this->checkbox_extended_title, $evp_link_target, $this->checkbox_extended_title, $evp_link_embed[1]);
         }
 
-        $strOptions = sprintf('<span><input type="checkbox" name="%s" id="opt_%s" class="checkbox" value="%s"%s%s /> <label id="lbl_%s" for="opt_%s">%s</label></span>',
+        $strOptions = sprintf('<span><input type="checkbox" name="%s" id="opt_%s" class="checkbox" value="%s"%s%s /> <label id="lbl_%s" for="opt_%s">%s</label></span><span class="mandatory">*</span>',
                 $this->strName,
                 $this->strId . '_0',
                 $this->checkbox_extended_value,

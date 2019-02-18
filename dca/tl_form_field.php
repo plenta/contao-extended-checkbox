@@ -107,7 +107,7 @@ class tl_extended_checkbox extends \Contao\Backend
     {
         $intPid = $dc->activeRecord->pid;
 
-        if (\Contao\Inputget('act') == 'overrideAll') {
+        if (\Contao\Input::get('act') == 'overrideAll') {
             $intPid = \Contao\Input::get('id');
         }
 
