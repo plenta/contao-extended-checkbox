@@ -107,6 +107,7 @@ class FormCheckBoxExtended extends Widget
      */
     public function validate()
     {
+        $mandatory = $this->mandatory;
         $options = $_POST[$this->strName];
 
         $varInput = $this->validator($options);
@@ -116,7 +117,9 @@ class FormCheckBoxExtended extends Widget
         }
 
         // Reset the property
-        $this->mandatory = true;
+        if ($mandatory) {
+            $this->mandatory = true;
+        }
 
         // Clear result if nothing has been submitted
         if (!isset($_POST[$this->strName])) {
@@ -154,9 +157,9 @@ class FormCheckBoxExtended extends Widget
         }
 
         if (!strlen($this->checkbox_extended_url) && !strlen($this->checkbox_extended_singleSRC)) {
-            $strCheckboxLink = sprintf('%s%s%s', $evp_link_embed[0], $this->checkbox_extended_title, $evp_link_embed[1]);
+            $strCheckboxLink = sprintf('%s%s%s%s%s', ($this->mandatory ? '<span class="invisible">'.$GLOBALS['TL_LANG']['MSC']['mandatory'].' </span>' : ''), $evp_link_embed[0], ($this->mandatory ? '<span class="mandatory">*</span>' : ''), $this->checkbox_extended_title, $evp_link_embed[1]);
         } else {
-            $strCheckboxLink = sprintf('%s<a href="%s" title="%s"%s>%s</a>%s', $evp_link_embed[0], $href, $this->checkbox_extended_title, $evp_link_target, $this->checkbox_extended_title, $evp_link_embed[1]);
+            $strCheckboxLink = sprintf('%s%s%s<a href="%s" title="%s"%s>%s</a>%s', ($this->mandatory ? '<span class="invisible">'.$GLOBALS['TL_LANG']['MSC']['mandatory'].' </span>' : ''), $evp_link_embed[0], ($this->mandatory ? '<span class="mandatory">*</span>' : ''), $href, $this->checkbox_extended_title, $evp_link_target, $this->checkbox_extended_title, $evp_link_embed[1]);
         }
 
         $strOptions = sprintf('<span><input type="checkbox" name="%s" id="opt_%s" class="checkbox" value="%s"%s%s /> <label id="lbl_%s" for="opt_%s">%s</label></span>',
@@ -167,9 +170,9 @@ class FormCheckBoxExtended extends Widget
                 $this->getAttributes(),
                 $this->strId . '_0',
                 $this->strId . '_0',
-                $strCheckboxLink) . $this->addSubmit();
+                $strCheckboxLink);
 
-        return sprintf('<div id="ctrl_%s" class="checkbox_container%s">%s</div>', $this->strId, (strlen($this->strClass) ? ' ' . $this->strClass : ''), $strOptions) . $this->addSubmit();
+        return sprintf('<div id="ctrl_%s" class="checkbox_container%s">%s</div>', $this->strId, (strlen($this->strClass) ? ' ' . $this->strClass : ''), $strOptions);
     }
 
     /**
