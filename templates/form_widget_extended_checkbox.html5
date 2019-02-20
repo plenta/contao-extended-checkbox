@@ -1,6 +1,21 @@
 <?php $this->extend('form_row'); ?>
 
 <?php $this->block('field'); ?>
-<label><?php echo $this->label; ?><?php if ($this->mandatory): ?><span class="mandatory">*</span><?php endif; ?></label>
-<?php echo $this->generateWithError(); ?><br>
+<fieldset id="ctrl_<?= $this->id ?>" class="checkbox_container<?php if ($this->class) echo ' ' . $this->class; ?>">
+    <?php if ($this->label): ?>
+    <legend>
+        <?php if ($this->mandatory): ?>
+        <span class="invisible"><?= $this->mandatoryField ?> </span><?= $this->label ?><span class="mandatory">*</span>
+        <?php else: ?>
+        <?= $this->label ?>
+        <?php endif; ?>
+    </legend>
+    <?php endif; ?>
+
+    <?php if ($this->hasErrors()): ?>
+    <p class="error"><?= $this->getErrorAsString() ?></p>
+    <?php endif; ?>
+
+    <?php echo $this->generateWithError(); ?>
+</fieldset>
 <?php $this->endblock(); ?>
