@@ -45,7 +45,7 @@ class FormCheckBoxExtended extends Widget
      *
      * @var string
      */
-    protected $strPrefix = 'widget widget-extended-checkbox';
+    protected $strPrefix = 'widget widget-checkbox widget-extended-checkbox';
 
     /**
      * @var array
