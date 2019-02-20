@@ -159,7 +159,7 @@ class FormCheckBoxExtended extends Widget
             $strCheckboxLink = sprintf('%s<a href="%s" title="%s"%s>%s</a>%s', $evp_link_embed[0], $href, $this->checkbox_extended_title, $evp_link_target, $this->checkbox_extended_title, $evp_link_embed[1]);
         }
 
-        $strOptions = sprintf('<span><input type="checkbox" name="%s" id="opt_%s" class="checkbox" value="%s"%s%s /> <label id="lbl_%s" for="opt_%s">%s</label></span><span class="mandatory">*</span>',
+        $strOptions = sprintf('<span><input type="checkbox" name="%s" id="opt_%s" class="checkbox" value="%s"%s%s /> <label id="lbl_%s" for="opt_%s">%s</label></span>',
                 $this->strName,
                 $this->strId . '_0',
                 $this->checkbox_extended_value,
