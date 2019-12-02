@@ -10,9 +10,6 @@
  * @license LGPL
  */
 
-use Contao\Input;
-use Contao\Backend;
-use Contao\Controller;
 use Contao\DataContainer;
 
 /**
@@ -89,42 +86,14 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['checkbox_extended_embed'] = array
     'sql'                     => "varchar(255) NOT NULL default ''"
 );
 
-$GLOBALS['TL_DCA']['tl_form_field']['fields']['checkbox_extended_tpl'] = array
-(
+$GLOBALS['TL_DCA']['tl_form_field']['fields']['checkbox_extended_tpl'] = [
     'label'                   => &$GLOBALS['TL_LANG']['tl_form_field']['checkbox_extended_tpl'],
     'exclude'                 => true,
     'inputType'               => 'select',
-    'default' => 'form_widget_extended_checkbox_without_label',
-    'options_callback' => array('tl_extended_checkbox', 'getExtendedCheckboxTemplates'),
+    'default'                 => 'form_widget_extended_checkbox_without_label',
+    'options_callback'        => static function ()
+    {
+        return Controller::getTemplateGroup('form_widget');
+    },
     'sql'                     => "varchar(64) NOT NULL default ''"
-);
-
-/**
- * Class tl_extended_checkbox
- */
-class tl_extended_checkbox extends Backend
-{
-    /**
-     * tl_extended_checkbox constructor.
-     */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->import('BackendUser', 'User');
-    }
-
-    /**
-     * @param DataContainer $dc
-     * @return mixed
-     */
-    public function getExtendedCheckboxTemplates(DataContainer $dc)
-    {
-        $intPid = $dc->activeRecord->pid;
-
-        if (Input::get('act') == 'overrideAll') {
-            $intPid = Input::get('id');
-        }
-
-        return Controller::getTemplateGroup('form_widget' , $intPid);
-    }
-}
+];
