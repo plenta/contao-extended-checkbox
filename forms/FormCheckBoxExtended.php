@@ -134,7 +134,9 @@ class FormCheckBoxExtended extends Widget
     {
         $evp_link_target = '';
 
-        $this->arrAttributes['required'] = 'required';
+        if ($this->mandatory) {
+            $this->arrAttributes['required'] = 'required';
+        }
 
         // Target
         if ($this->checkbox_extended_target) {
