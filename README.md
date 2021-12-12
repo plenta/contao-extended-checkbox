@@ -7,4 +7,4 @@ Checkbox with hyperlink
 
 ## Contributor
 
-* Christian Barkowsky <hallo@christianbarkowsky.de>, http://christianbarkowsky.de
+* Christian Barkowsky <hallo@plenta.io>, https://plenta.io
