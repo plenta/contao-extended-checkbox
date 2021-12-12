@@ -50,7 +50,7 @@ class FormCheckBoxExtended extends Widget
     /**
      * @var array
      */
-    protected $arrOptions = array();
+    protected $arrOptions = [];
 
     /**
      * Initialize the object
@@ -95,11 +95,7 @@ class FormCheckBoxExtended extends Widget
      */
     public function __get($strKey)
     {
-        switch ($strKey) {
-            default:
-                return parent::__get($strKey);
-                break;
-        }
+        return parent::__get($strKey);
     }
 
     /**
