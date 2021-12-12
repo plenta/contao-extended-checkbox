@@ -3,10 +3,10 @@
 /**
  * ExtendedCheckbox
  *
- * Copyright (C) 2009-2019 Christian Barkowsky
+ * Copyright (C) 2009-2021 Christian Barkowsky
  *
  * @package ExtendedCheckbox
- * @author  Christian Barkowsky <https://christianbarkowsky.de>
+ * @author  Christian Barkowsky <https://plenta.io>
  * @license LGPL
  */
 
@@ -54,8 +54,10 @@ class FormCheckBoxExtended extends Widget
 
     /**
      * Initialize the object
+     *
+     * @param array $arrAttributes An optional attributes array
      */
-    public function __construct($arrAttributes=false)
+    public function __construct($arrAttributes=null)
     {
         $this->addAttributes($arrAttributes);
 
@@ -75,13 +77,11 @@ class FormCheckBoxExtended extends Widget
     {
         switch ($strKey) {
             case 'options':
+            case 'rgxp':
                 break;
 
             case 'mandatory':
                 $this->arrConfiguration['mandatory'] = $varValue ? true : false;
-                break;
-
-            case 'rgxp':
                 break;
 
             default:
