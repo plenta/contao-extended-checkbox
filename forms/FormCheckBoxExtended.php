@@ -155,9 +155,9 @@ class FormCheckBoxExtended extends Widget
         }
 
         if (!strlen($this->checkbox_extended_url) && !strlen($this->checkbox_extended_singleSRC)) {
-            $strCheckboxLink = sprintf('%s%s%s%s%s', ($this->mandatory ? '<span class="invisible">'.$GLOBALS['TL_LANG']['MSC']['mandatory'].' </span>' : ''), $evp_link_embed[0], ($this->mandatory ? '<span class="mandatory">*</span>' : ''), $this->checkbox_extended_title, $evp_link_embed[1]);
+            $strCheckboxLink = sprintf('%s%s%s%s%s', ($this->mandatory ? '<span class="invisible">'.$GLOBALS['TL_LANG']['MSC']['mandatory'].' </span>' : ''), $evp_link_embed[0], $this->checkbox_extended_title, $evp_link_embed[1], ($this->mandatory ? '<span class="mandatory">*</span>' : ''));
         } else {
-            $strCheckboxLink = sprintf('%s%s%s<a href="%s" title="%s"%s>%s</a>%s', ($this->mandatory ? '<span class="invisible">'.$GLOBALS['TL_LANG']['MSC']['mandatory'].' </span>' : ''), $evp_link_embed[0], ($this->mandatory ? '<span class="mandatory">*</span>' : ''), $href, $this->checkbox_extended_title, $evp_link_target, $this->checkbox_extended_title, $evp_link_embed[1]);
+            $strCheckboxLink = sprintf('%s%s<a href="%s" title="%s"%s>%s</a>%s%s', ($this->mandatory ? '<span class="invisible">'.$GLOBALS['TL_LANG']['MSC']['mandatory'].' </span>' : ''), $evp_link_embed[0], $href, $this->checkbox_extended_title, $evp_link_target, $this->checkbox_extended_title, $evp_link_embed[1], ($this->mandatory ? '<span class="mandatory">*</span>' : ''));
         }
 
         $strOptions = sprintf('<span><input type="checkbox" name="%s" id="opt_%s" class="checkbox" value="%s"%s%s /> <label id="lbl_%s" for="opt_%s">%s</label></span>',
