@@ -18,6 +18,7 @@
     "source": "https://github.com/christianbarkowsky/contao-extended-checkbox"
   },
   "require":{
+    "php": "7.4 || ^8.0",
     "contao/core-bundle": "~4.4"
   },
   "replace": {
