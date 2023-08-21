@@ -1,0 +1,21 @@
+{% extends '@Contao/form_row' %}
+
+{% block field %}
+<fieldset id="ctrl_{{ strId }}" class="checkbox_container{% if strClass %} {{ strClass }}{% endif %}">
+    {% if strLabel %}
+    <legend>
+        {% if arrConfiguration.mandatory %}
+        <span class="invisible">{{ arrConfiguration.mandatoryField }} </span>{{ strLabel }}<span class="mandatory">*</span>
+        {% else %}
+        {{ strLabel }}
+        {% endif %}
+    </legend>
+    {% endif %}
+
+    {% if this.hasErrors() %}
+    <p class="error">{{ this.getErrorAsString() }}</p>
+    {% endif %}
+
+    {{ this.generateWithError()|raw }}
+</fieldset>
+{% endblock %}

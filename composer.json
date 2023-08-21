@@ -2,12 +2,15 @@
   "name":"plenta/contao-extended-checkbox",
   "description":"Checkbox with a hyperlink in label. Extension for Contao Open Source CMS",
   "keywords":["checkbox", "widget", "form", "hyperlink"],
-  "type": "contao-bundle",,,
-  "license":"LGPL-3.0-or-later",
+  "minimum-stability": "stable",
+  "type":"contao-bundle",
+  "license":"LGPL-3.0+",
   "authors":[
     {
-      "name": "Plenta.io",
-      "homepage": "https://plenta.io"
+      "name":"Plenta",
+      "homepage":"https://plenta.io",
+      "role":"Developer",
+      "email":"hallo@plenta.io"
     }
   ],
   "support": {
@@ -16,9 +19,28 @@
   },
   "require":{
     "php": "^8.1",
-    "contao/core-bundle": "^5.1"
+    "contao/core-bundle": "^4.13 || ^5.1"
+  },
+  "require-dev": {
+    "contao/manager-bundle": "^5.2",
+    "friendsofphp/php-cs-fixer": "^v3.23.0"
   },
   "replace": {
     "contao-legacy/extended_checkbox": "self.version"
+  },
+  "extra": {
+    "contao-manager-plugin": "Plenta\\ExtendedCheckbox\\ContaoManager\\Plugin"
+  },
+  "autoload": {
+    "psr-4": {
+      "Plenta\\ExtendedCheckbox\\": "src"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "contao-components/installer": true,
+      "php-http/discovery": true,
+      "contao/manager-plugin": true
+    }
   }
 }
