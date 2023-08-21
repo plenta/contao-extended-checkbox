@@ -3,3 +3,5 @@
 thumbs.db
 Thumbs.db
 .idea
+vendor
+composer.lock

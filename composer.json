@@ -3,32 +3,44 @@
   "description":"Checkbox with a hyperlink in label. Extension for Contao Open Source CMS",
   "keywords":["checkbox", "widget", "form", "hyperlink"],
   "minimum-stability": "stable",
-  "type":"contao-module",
+  "type":"contao-bundle",
   "license":"LGPL-3.0+",
   "authors":[
     {
-      "name":"Christian Barkowsky",
-      "homepage":"https://christianbarkowsky.de",
+      "name":"Plenta",
+      "homepage":"https://plenta.io",
       "role":"Developer",
-      "email":"hallo@christianbarkowsky.de"
+      "email":"hallo@plenta.io"
     }
   ],
   "support": {
-    "issues": "https://github.com/christianbarkowsky/contao-extended-checkbox/issues",
-    "source": "https://github.com/christianbarkowsky/contao-extended-checkbox"
+    "issues": "https://github.com/plenta/contao-extended-checkbox/issues",
+    "source": "https://github.com/plenta/contao-extended-checkbox"
   },
   "require":{
-    "php": "^7.4 || ^8.0",
-    "contao/core-bundle": "~4.4"
+    "php": "^8.1",
+    "contao/core-bundle": "^4.13 || ^5.1"
+  },
+  "require-dev": {
+    "contao/manager-bundle": "^5.2",
+    "friendsofphp/php-cs-fixer": "^v3.23.0"
   },
   "replace": {
     "contao-legacy/extended_checkbox": "self.version"
   },
-  "extra":{
-    "contao": {
-      "sources":{
-        "": "system/modules/extended_checkbox"
-      }
+  "extra": {
+    "contao-manager-plugin": "Plenta\\ExtendedCheckbox\\ContaoManager\\Plugin"
+  },
+  "autoload": {
+    "psr-4": {
+      "Plenta\\ExtendedCheckbox\\": "src"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "contao-components/installer": true,
+      "php-http/discovery": true,
+      "contao/manager-plugin": true
     }
   }
 }
