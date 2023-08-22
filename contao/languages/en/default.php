@@ -11,7 +11,4 @@ declare(strict_types=1);
  * @link          https://github.com/plenta/
  */
 
-/*
- * Frontend form fields
- */
 $GLOBALS['TL_LANG']['FFL']['checkbox_extended'] = ['Extended Checkbox', ''];

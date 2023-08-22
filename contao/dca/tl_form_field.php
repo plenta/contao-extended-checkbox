@@ -13,20 +13,10 @@ declare(strict_types=1);
 
 use Contao\Controller;
 
-/*
- * Load tl_content
- */
-
 Controller::loadDataContainer('tl_content');
 
-/*
- * Palettes
- */
 $GLOBALS['TL_DCA']['tl_form_field']['palettes']['checkbox_extended'] = '{type_legend},type,name,label;{options_legend},checkbox_extended_value;{extended_checkbox_legend},checkbox_extended_url,checkbox_extended_target,checkbox_extended_singleSRC,checkbox_extended_title,checkbox_extended_embed;{fconfig_legend:hide},mandatory;{template_legend:hide},checkbox_extended_tpl;{expert_legend:hide},class;{submit_legend:hide},addSubmit';
 
-/*
- * Fields
- */
 $GLOBALS['TL_DCA']['tl_form_field']['fields']['checkbox_extended_value'] = [
     'label' => &$GLOBALS['TL_LANG']['tl_form_field']['checkbox_extended_value'],
     'exclude' => true,
@@ -41,7 +31,14 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['checkbox_extended_url'] = [
     'exclude' => true,
     'search' => true,
     'inputType' => 'text',
-    'eval' => ['mandatory' => false, 'rgxp' => 'url', 'decodeEntities' => true, 'maxlength' => 255, 'tl_class' => 'w50 wizard', 'dcaPicker' => true],
+    'eval' => [
+        'mandatory' => false,
+        'rgxp' => 'url',
+        'decodeEntities' => true,
+        'maxlength' => 255,
+        'tl_class' => 'w50 wizard',
+        'dcaPicker' => true
+    ],
     'sql' => "varchar(255) NOT NULL default ''",
 ];
 
