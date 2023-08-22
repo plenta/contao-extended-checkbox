@@ -22,7 +22,7 @@
     "contao/core-bundle": "^4.13 || ^5.1"
   },
   "require-dev": {
-    "contao/manager-bundle": "^5.2",
+    "contao/manager-bundle": "^4.13 || ^5.1",
     "friendsofphp/php-cs-fixer": "^v3.23.0"
   },
   "replace": {
