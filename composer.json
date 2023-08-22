@@ -1,5 +1,5 @@
 {
-  "name":"christianbarkowsky/extended_checkbox",
+  "name":"plenta/contao-extended-checkbox",
   "description":"Checkbox with a hyperlink in label. Extension for Contao Open Source CMS",
   "keywords":["checkbox", "widget", "form", "hyperlink"],
   "minimum-stability": "stable",
@@ -7,15 +7,15 @@
   "license":"LGPL-3.0+",
   "authors":[
     {
-      "name":"Christian Barkowsky",
-      "homepage":"https://christianbarkowsky.de",
+      "name":"Plenta",
+      "homepage":"https://plenta.io",
       "role":"Developer",
-      "email":"hallo@christianbarkowsky.de"
+      "email":"hallo@plenta.io"
     }
   ],
   "support": {
-    "issues": "https://github.com/christianbarkowsky/contao-extended-checkbox/issues",
-    "source": "https://github.com/christianbarkowsky/contao-extended-checkbox"
+    "issues": "https://github.com/plenta/contao-extended-checkbox/issues",
+    "source": "https://github.com/plenta/contao-extended-checkbox"
   },
   "require":{
     "php": "^7.4 || ^8.0",
