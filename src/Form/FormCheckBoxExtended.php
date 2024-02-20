@@ -51,6 +51,7 @@ class FormCheckBoxExtended extends Widget
      * @var string
      */
     protected $strPrefix = 'widget widget-checkbox widget-extended-checkbox';
+    protected $prefix = 'widget widget-checkbox widget-extended-checkbox';
 
     /**
      * @var array
@@ -94,6 +95,11 @@ class FormCheckBoxExtended extends Widget
 
             case 'mandatory':
                 $this->arrConfiguration['mandatory'] = $varValue ? true : false;
+                break;
+
+            case 'prefix':
+                $this->prefix = $varValue;
+                $this->strPrefix = $varValue;
                 break;
 
             default:
